@@ -2,28 +2,31 @@
 
 ## Overview
 
-This project presents a low-cost **Fiber Optic Volatile Organic Compound (VOC) Sensor** developed using **Arduino UNO**, an **LDR (Light Dependent Resistor)**, and a **16×2 LCD**. The system detects changes in light intensity transmitted through an optical fiber when exposed to volatile organic compounds (VOCs).
+This project presents a **low-cost Fiber Optic Volatile Organic Compound (VOC) Sensor** developed using **Arduino UNO**, an **LDR (Light Dependent Resistor)**, **Optical Fiber**, and a **16×2 LCD Display**. The system detects changes in light intensity transmitted through an optical fiber when exposed to volatile organic compounds (VOCs) such as **Ethanol** and **Acetone**.
 
-An LDR placed at the receiving end measures the transmitted light. As VOC exposure changes the optical properties of the sensing region, the amount of received light changes, resulting in a variation in the LDR resistance. The Arduino calculates this resistance using the voltage divider principle and displays the measured value on the LCD.
+An LED transmits light through the optical fiber to an LDR placed at the receiving end. Exposure to VOC gases changes the optical properties of the sensing region, altering the amount of light received by the LDR. The Arduino measures the resulting voltage using its Analog-to-Digital Converter (ADC), calculates the LDR resistance using the voltage divider principle, and displays the measured value on the LCD.
+
+This project demonstrates a simple and affordable approach to VOC sensing for environmental monitoring and educational applications.
 
 ---
 
 ## Features
 
 - Fiber optic-based VOC sensing
+- Detection of Ethanol and Acetone samples
 - Light intensity measurement using an LDR
 - Resistance calculation using Arduino ADC
-- Real-time LCD display
-- Low-cost sensing solution
-- Portable prototype for environmental monitoring
+- Real-time display on a 16×2 LCD
+- Portable and low-cost prototype
+- Easy to build using readily available components
 
 ---
 
 ## Hardware Used
 
 - Arduino UNO
-- LDR (Light Dependent Resistor)
 - Optical Fiber
+- LDR (Light Dependent Resistor)
 - LED Light Source
 - 16×2 LCD Display
 - 470Ω Reference Resistor
@@ -44,25 +47,28 @@ An LDR placed at the receiving end measures the transmitted light. As VOC exposu
 
 1. An LED transmits light through the optical fiber.
 2. The sensing region of the optical fiber is exposed to VOC gases.
-3. VOC exposure changes the transmitted light intensity.
-4. The LDR placed at the receiving end detects the change in light.
-5. The Arduino reads the LDR voltage using its Analog-to-Digital Converter (ADC).
-6. The resistance of the LDR is calculated using the voltage divider equation.
+3. VOC gases alter the transmitted light intensity.
+4. The LDR detects the change in received light.
+5. Arduino reads the LDR voltage using its ADC.
+6. The LDR resistance is calculated using the voltage divider equation.
 7. The calculated resistance is displayed on the 16×2 LCD.
+8. Different VOC samples produce different resistance values, enabling gas detection.
 
 ---
 
 ## Formula Used
 
-The resistance is calculated using the voltage divider equation:
+The LDR resistance is calculated using the voltage divider equation:
 
+```
 R₁ = R₂ × ((Vin / Vout) − 1)
+```
 
 Where:
 
 - **R₁** = LDR Resistance
 - **R₂** = 470Ω Reference Resistor
-- **Vin** = 5V
+- **Vin** = 5V Supply Voltage
 - **Vout** = Measured Output Voltage
 
 ---
@@ -70,34 +76,35 @@ Where:
 ## Hardware Block Diagram
 
 ```
-LED
-   │
-   ▼
-Optical Fiber
-   │
-   ▼
-VOC Sensing Region
-   │
-   ▼
-LDR Receiver
-   │
-   ▼
-Arduino UNO
-   │
-   ▼
-16×2 LCD Display
+LED Light Source
+        │
+        ▼
+ Optical Fiber
+        │
+        ▼
+ VOC Sensing Region
+        │
+        ▼
+   LDR Receiver
+        │
+        ▼
+   Arduino UNO
+        │
+        ▼
+   16×2 LCD Display
 ```
 
 ---
 
 ## Applications
 
-- Environmental Monitoring
 - Air Quality Monitoring
+- Environmental Monitoring
 - Industrial Safety
 - Chemical Laboratories
 - Smart Sensor Systems
-- Research and Educational Projects
+- Educational Projects
+- Research Applications
 
 ---
 
@@ -106,8 +113,12 @@ Arduino UNO
 ```
 Fiber-Optic-VOC-Sensor/
 │── voc_sensor.ino
-│── Circuit_Diagram.jpg
 │── README.md
+│── Top_View.jpg
+│── Front_View.jpg
+│── Side_View.jpg
+│── Ethanol_Test_Sample.jpg
+│── Acetone_Test_Sample.jpg
 ```
 
 ---
@@ -120,19 +131,63 @@ Fiber-Optic-VOC-Sensor/
 - Optical Fiber Sensing
 - Sensor Interfacing
 - LCD Interfacing
-- Voltage Divider Circuits
+- Voltage Divider Circuit Design
 - Embedded Hardware Prototyping
+- Electronics Testing
 
 ---
 
 ## Future Improvements
 
-- OLED Display
-- ESP32 Wi-Fi Monitoring
+- ESP32-based IoT Monitoring
 - Cloud Data Logging
-- Mobile Application
+- Mobile Application Integration
+- Wireless Monitoring
+- OLED/TFT Display
+- Multiple VOC Detection
 - Real-Time Graph Visualization
-- Wireless Sensor Network Integration
+
+---
+
+# Project Images
+
+## Top View
+
+![Top View](Top_View.jpg)
+
+*Top view of the Fiber Optic VOC Sensor prototype.*
+
+---
+
+## Front View
+
+![Front View](Front_View.jpg)
+
+*Front view of the complete hardware setup.*
+
+---
+
+## Side View
+
+![Side View](Side_View.jpg)
+
+*Side view showing the optical fiber sensing arrangement.*
+
+---
+
+## Ethanol Test Sample
+
+![Ethanol Test](Ethanol_Test_Sample.jpg)
+
+*Sensor response while testing with an Ethanol sample.*
+
+---
+
+## Acetone Test Sample
+
+![Acetone Test](Acetone_Test_Sample.jpg)
+
+*Sensor response while testing with an Acetone sample.*
 
 ---
 
@@ -140,6 +195,14 @@ Fiber-Optic-VOC-Sensor/
 
 **Ravichandran C S**
 
-GitHub: https://github.com/Ravi-eng17
+📧 Email: ravichandrancs123@gmail.com
 
-LinkedIn: https://linkedin.com/in/ravi-chandran-cs-3923811b3
+🔗 GitHub: https://github.com/Ravi-eng17
+
+💼 LinkedIn: https://linkedin.com/in/ravi-chandran-cs-3923811b3
+
+---
+
+## License
+
+This project is shared for educational and learning purposes. Feel free to use and modify it with appropriate attribution.
